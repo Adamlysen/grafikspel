@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "2Ov2uem3DZ+YXF2T44lHFVDmljkd97co6ngdCxWTMUhzORsF+JUAGEUxi0lIeApYuGRN8Vjjc4jcVXy0TBiNgQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\adam.lysen\\progamiss\\grafikspel\\Grafikspel\\Grafikspel.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\adam.lysen\\.nuget\\packages\\raylib-cs\\4.5.0.4\\raylib-cs.4.5.0.4.nupkg.sha512",
+    "C:\\Users\\adam.lysen\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}

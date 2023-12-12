@@ -31,6 +31,9 @@ class Program
         int point3width = 25;
         int point3height = 25;
 
+        int rows = 5;
+        int cols = 5;
+
         bool scenestart = true;
         bool scenegame1 = false;
         bool scenegame2 = false;

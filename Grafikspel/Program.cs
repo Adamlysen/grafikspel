@@ -7,7 +7,7 @@ class Program
     static void Main()
     {
         Raylib.InitWindow(1920, 1080, "Hello");
-        Raylib.ToggleFullscreen();
+        // Raylib.ToggleFullscreen();
         Raylib.SetTargetFPS(60);
 
         int player1x = 100;
@@ -48,6 +48,34 @@ class Program
 
         float levelradius2 = 2500;
 
+        int[,] grid = {
+            {1,1,1,1,1,1,1,1,1,1,1,1,1},
+            {1,0,0,0,0,0,0,0,0,0,0,1,0},
+            {1,0,0,0,0,0,0,0,0,0,0,1,0},
+            {1,0,0,0,0,0,0,1,1,0,0,1,0},
+            {1,0,0,0,0,0,0,1,1,0,0,1,0},
+            {1,0,0,0,0,0,0,0,0,0,0,1,0},
+            {1,0,0,0,0,0,0,0,0,0,0,0,0},
+            {1,1,1,1,1,1,1,1,1,1,1,1,1}
+        };
+
+        int tileSize = 32;
+
+        List<Rectangle> walls = new();
+
+        for (int x = 0; x < grid.GetLength(1); x++)
+        {
+            for (int y = 0; y < grid.GetLength(0); y++)
+            {
+                // System.Console.WriteLine($"x: {x}, y: {y}");
+                if (grid[y, x] == 1)
+                {
+                    Rectangle wall = new Rectangle(x * tileSize, y * tileSize, tileSize, tileSize);
+                    walls.Add(wall);
+                }
+            }
+        }
+
 
 
         while (!Raylib.WindowShouldClose())
@@ -81,6 +109,12 @@ class Program
                 Raylib.BeginDrawing();
                 Raylib.ClearBackground(Color.DARKGRAY);
 
+                foreach (Rectangle wall in walls)
+                {
+                    Raylib.DrawRectangleRec(wall, Color.PINK);
+                    Raylib.DrawRectangleLinesEx(wall, 1, Color.YELLOW);
+                }
+
                 if (Raylib.IsKeyDown(KeyboardKey.KEY_D))
                 {
                     player1x += 8;
@@ -103,6 +137,8 @@ class Program
                 Rectangle point1 = new Rectangle(point1xpos, point1ypos, point1width, point1height);
                 Rectangle point2 = new Rectangle(point2xpos, point2ypos, point2width, point2height);
                 Rectangle point3 = new Rectangle(point3xpos, point3ypos, point3width, point3height);
+
+
 
 
 
